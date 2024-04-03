@@ -15,6 +15,7 @@ jobs:
 
     - name: Build Docker Image
       run: |
+       echo "${{ secrets.DOCKER_PASSWORD_TOKEN }}" | docker login -u "${{ secrets.DOCKER_USERNAME_SAI40 }}" --password-stdin
        docker build . -t image-scanner
     
     - name: Installing Docker Scout
