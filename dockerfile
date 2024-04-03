@@ -1,5 +1,6 @@
 FROM ubuntu
 RUN apt update
+ENV TERM=xterm
 RUN apt -y install python3 python3-pip
 RUN mkdir app
 ADD . /app
