@@ -26,12 +26,10 @@ jobs:
     - name: Checking Image Overview
       run: |
        docker scout quickview image-scanner > image-scanner-overview.csv
-       docker scout quickview image-scanner > image-scanner-overview.txt
        
     - name: Checking Image Vulnerabilities
       run: |
-       docker scout cves --format only-packages --only-vuln-packages --only-severity critical image-scanner > image-scanner-cves.csv
-       docker scout cves --format only-packages --only-vuln-packages --only-severity critical image-scanner > image-scanner-cves.txt
+       docker run --env TERM=DEV docker scout cves --format only-packages --only-vuln-packages --only-severity critical image-scanner > image-scanner-cves.csv
        clear
        cat image-scanner-overview.csv
        cat image-scanner-cves.csv
