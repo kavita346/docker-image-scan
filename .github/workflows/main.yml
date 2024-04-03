@@ -29,7 +29,7 @@ jobs:
        
     - name: Checking Image Vulnerabilities
       run: |
-       docker run --env TERM=DEV docker scout cves --format only-packages --only-vuln-packages --only-severity critical image-scanner > image-scanner-cves.csv
+       docker scout cves --format only-packages --only-vuln-packages --only-severity critical image-scanner > image-scanner-cves.csv
        clear
        cat image-scanner-overview.csv
        cat image-scanner-cves.csv
