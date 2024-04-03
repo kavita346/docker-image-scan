@@ -22,7 +22,6 @@ jobs:
       run: |
        sudo apt update && sudo apt -y install curl
        mkdir ~/.docker/cli-plugins
-       cd /home/ubuntu/.docker/cli-plugins
        curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s --
        
     - name: Checking Image Overview
